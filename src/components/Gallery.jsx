@@ -50,7 +50,15 @@ const Gallery = ({ images, setImages }) => {
       <div className="relative">
         <div className="py-8 border-b border-b-gray-500 px-6">
           <div className="flex justify-between">
-            <div className="font-semibold flex gap-2">{/* ... */}</div>
+          <div className="font-semibold flex gap-2">
+            <input
+              type="checkbox"
+              className="accent-blue-800 h-6 w-6"
+              checked={selectedImages.length > 0}
+              onChange={()=>{}}
+            />
+            {selectedImages?.length} files selected
+          </div>
             <button
               className="text-red-600 border-0 bg-transparent"
               onClick={handleDeleteSelected}

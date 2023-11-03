@@ -19,12 +19,8 @@ const SingleImage = ({
   const [, drop] = useDrop({
     accept: "IMAGE",
     drop: (draggedItem) => {
-      console.log("draggedItem: ", draggedItem);
       const sourceIndex = draggedItem.id;
-      console.log("sourceIndex: ", sourceIndex);
       const targetIndex = index;
-      console.log("targetIndex: ", targetIndex);
-  
       if (sourceIndex !== null && targetIndex !== null) {
         handleDrop(sourceIndex, targetIndex);
         draggedItem.index = targetIndex;
