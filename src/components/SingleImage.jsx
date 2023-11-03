@@ -8,6 +8,7 @@ const SingleImage = ({
   index,
   handleDrop
 }) => {
+  
   const [, drag] = useDrag({
     type: "IMAGE",
     item: { id: image.id, type: "IMAGE" },
@@ -34,7 +35,7 @@ const SingleImage = ({
       ref={(node) => drag(drop(node))}
       className={`relative p-2 group border border-1 rounded-lg border-gray-300 ${
         isLarge ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-      }`}
+      } transition-transform ease-in-out duration-300 transform `}
       onClick={() => onToggleSelection()}
     >
       <img
