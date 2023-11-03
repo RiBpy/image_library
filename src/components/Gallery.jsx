@@ -83,7 +83,7 @@ const Gallery = ({ images, setImages }) => {
           ))}
           <label
             htmlFor="image-upload"
-            className="flex flex-col m-3 items-center justify-center border border-1 border-gray-400 border-dashed bg-gray-100 rounded-lg cursor-pointer py-10 lg:py-20"
+            className="flex flex-col m-3 items-center justify-center border border-1 border-gray-400 border-dashed bg-gray-100 rounded-lg cursor-pointer py-[5vh] sm:py-[4vh] md:py-[5vh]"
           >
             <img src="/assets/icons/photo.png" className="w-7 h-7" alt="" />
             <span className="mt-2">Add images</span>

@@ -8,7 +8,7 @@ const SingleImage = ({
   index,
   handleDrop
 }) => {
-  const [{ isDragging }, drag] = useDrag({
+  const [, drag] = useDrag({
     type: "IMAGE",
     item: { id: image.id, type: "IMAGE" },
     collect: (monitor) => ({
@@ -28,7 +28,6 @@ const SingleImage = ({
     },
   });
 
-  const opacity = isDragging ? 0.5 : 1;
 
   return (
     <div
@@ -37,7 +36,6 @@ const SingleImage = ({
         isLarge ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
       }`}
       onClick={() => onToggleSelection()}
-      style={{ opacity }}
     >
       <img
         src={image?.src}
