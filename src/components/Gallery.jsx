@@ -4,8 +4,10 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 const Gallery = ({ images, setImages }) => {
+  //states
   const [selectedImages, setSelectedImages] = useState([]);
 
+  //handler functions
   const handleImageClick = (index) => {
     const isImageSelected = selectedImages.includes(index);
     if (isImageSelected) {
@@ -78,7 +80,7 @@ const Gallery = ({ images, setImages }) => {
               <SingleImage
                 key={image?.id}
                 image={image}
-                isLarge={index === 0} // Set isLarge to true for the first image
+                isLarge={index === 0} //first image will be set as featured image
                 isSelected={selectedImages.includes(image.id)}
                 onToggleSelection={() => handleImageClick(image.id)}
                 handleDrop={handleDrop}

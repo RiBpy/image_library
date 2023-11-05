@@ -9,6 +9,7 @@ const SingleImage = ({
   handleDrop
 }) => {
   
+  //drag functionality
   const [, drag] = useDrag({
     type: "IMAGE",
     item: { id: image.id, type: "IMAGE" },
@@ -17,6 +18,7 @@ const SingleImage = ({
     }),
   });
 
+  //drop functionality
   const [, drop] = useDrop({
     accept: "IMAGE",
     drop: (draggedItem) => {
