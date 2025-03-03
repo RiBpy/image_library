@@ -44,6 +44,13 @@ const Gallery = ({ images, setImages }) => {
     const updatedImages = [...images];
     const [draggedImage] = updatedImages.splice(sourceIndex, 1);
     updatedImages.splice(targetIndex, 0, draggedImage);
+
+    // Ensure the first image is always the featured image
+    if (targetIndex === 0 || sourceIndex === 0) {
+      const [featuredImage] = updatedImages.splice(targetIndex, 1);
+      updatedImages.unshift(featuredImage);
+    }
+
     setImages(updatedImages);
   };
 
